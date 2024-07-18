@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Destinos de Viagem</h1>
+    <% destinos.forEach(destino=> { %>
+        <div class="destino">
+            <h2>
+                <%= destino.nome %>
+            </h2>
+            <p>
+                <%= destino.descricao %>
+            </p>
+            <div>
+                <%- destino.endereco_google_maps %>
+            </div>
+            <img src="<%= destino.foto %>" alt="<%= destino.nome %>" width="400">
+
+            <h3>Atrativos</h3>
+            <% destino.atrativos.forEach(atrativo=> { %>
+                <div class="atrativo">
+                    <h4>
+                        <%= atrativo.nome %>
+                    </h4>
+                    <p>
+                        <%= atrativo.descricao %>
+                    </p>
+
+                    
+
+                
+                    <%- atrativo.endereco_google_maps %>
+
+                        <img src="<%= atrativo.foto_url %>" alt="<%= atrativo.nome %>" width="300">
+                </div>
+                <% }) %>
+        </div>
+        <% }) %>
+</body>
+</html>
+
